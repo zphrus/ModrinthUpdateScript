@@ -4,15 +4,13 @@ from py_essentials import hashing as hs # For hashing the file (Needed by the AP
 from requests.exceptions import HTTPError # Checking if something went wrong
 from colorama import Fore, init # This is completely optional, you can remove it if you want to, just adds some "Spice"
 
-Authorization = 'YOURMODRINTHAPIKEYHERE' # <---- Your modrinth api key.
-
 init(convert=True) # For whatever reason without this colorama doesn't want to work
 
 MCVersion = input('Minecraft version: ')  # Get the version we should update the mods to
 Loader = input('Fabric or Forge?: ')  # Get the loader the mods use
 
 #Do not touch these, unless you know what you're doing.
-headers = { 'Content-Type': 'application/json',  'Authorization': Authorization }
+headers = { 'Content-Type': 'application/json'}
 data = { 'loaders': [Loader], 'game_versions': [MCVersion] }
 
 #Let's go through all the files that are in the folder called "ModsFolder" and check if it's a .jar file
